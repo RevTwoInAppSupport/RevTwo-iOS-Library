@@ -10,9 +10,10 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "RevTwo"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "In-App Support for your iOS app."
   s.homepage     = "http://revtwo.com/"
+  s.documentation_url = "http://revtwo.com/docs/"
   s.author             = { "RevTwo Team" => "info@revtwo.com" }
 
   
@@ -55,8 +56,8 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/RevTwoInAppSupport/RevTwo-iOS-Library.git", :branch => "master" }
-  #s.source       = { :git => "https://github.com/RevTwoInAppSupport/RevTwo-iOS-Library.git", :tag => "{s.version}" }
+  #s.source       = { :git => "https://github.com/RevTwoInAppSupport/RevTwo-iOS-Library.git", :branch => "master" }
+  s.source       = { :git => "https://github.com/RevTwoInAppSupport/RevTwo-iOS-Library.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -72,7 +73,7 @@ Pod::Spec.new do |s|
   s.exclude_files = "Classes/Exclude"
   s.preserve_paths = 'Library/librevtwo.a'
   s.vendored_libraries = 'Library/librevtwo.a'
-  s.library = 'revtwo'
+  s.libraries = 'revtwo', 'sqlite3'
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -98,6 +99,8 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  
+  s.dependency "PubNub", "~> 4.0"
+  s.dependency "libjingle_peerconnection"
 
 end
