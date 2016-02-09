@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "RevTwo"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "In-App Support for your iOS app."
   s.homepage     = "http://revtwo.com/"
   s.documentation_url = "http://revtwo.com/docs/"
@@ -83,9 +83,7 @@ Pod::Spec.new do |s|
   #  You can preserve files from being cleaned, please don't preserve
   #  non-essential files like tests, examples and documentation.
   #
-
-  # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
