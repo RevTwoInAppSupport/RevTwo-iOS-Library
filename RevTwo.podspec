@@ -39,14 +39,7 @@ Pod::Spec.new do |s|
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Licensing your code is important. See http://choosealicense.com for more info.
-  #  CocoaPods will detect a license file if there is a named LICENSE*
-  #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
-  #
-
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "Commercial", :file => "LICENSE.txt" }
 
 
   
@@ -63,7 +56,7 @@ Pod::Spec.new do |s|
   #
 
   s.source       = { :git => "https://github.com/RevTwoInAppSupport/RevTwo-iOS-Library.git", :branch => "master" }
-  #s.source       = { :git => "https://github.com/RevTwoInAppSupport/RevTwo-iOS-Library.git", :tag => "0.0.1" }
+  #s.source       = { :git => "https://github.com/RevTwoInAppSupport/RevTwo-iOS-Library.git", :tag => "{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
