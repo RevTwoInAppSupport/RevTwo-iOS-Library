@@ -20,5 +20,8 @@
 @property UIButton * acceptButton;
 @property UIButton * declineButton;
 @property UIImageView * callImgView;
-
+@property (nonatomic, strong) CAGradientLayer *gradientLayer;
+@property BOOL useGradient;
+-(void)connectingCall;
+-(void)doneConnectingCall;
 @end

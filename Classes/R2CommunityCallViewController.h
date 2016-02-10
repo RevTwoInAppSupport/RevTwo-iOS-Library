@@ -7,14 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "R2ActiveCallView.h"
 
 @interface R2CommunityCallViewController : UIViewController
 
 @property UILabel * callLabel;
 @property UIButton * screenShareButton;
 @property UIButton * cameraButton;
+@property UIImageView * screenView;
+@property R2ActiveCallView * activeCallView;
+
 -(void)requestScreenShare;
 -(void)requestCamera;
-//-(void)showScreenShare;
 
+-(void)showScreenShare:(UIImage *)screen;
+-(void)endScreenShare;
 @end

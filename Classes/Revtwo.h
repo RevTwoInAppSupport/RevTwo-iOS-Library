@@ -18,7 +18,7 @@ extern int const R2MODE_DEVELOPMENT;
 extern int const R2MODE_TESTFLIGHT;
 extern int const R2MODE_PRODUCTION;
 
-void R2Initialize(NSString *productKey, int mode);
+void R2Initialize(NSString *productKey, NSString *secretKey, int mode);
 
 void R2Log(NSString *format, ...);
 void R2Error(NSString *format, ...);
@@ -45,18 +45,18 @@ NSString * R2get_signedInUserName();
 NSString * R2get_signedInUserEmail();
 NSString * R2get_signedInUserPhone();
 /*
- void customize_incomingCall_text(NSString *text);
- void customize_incomingCall_textColor(UIColor *)color;
- void customize_incomingCall_backgroundColor(UIColor *)color;
- void customize_incomingCall_image(UIImage *)image;
- */
+void customize_incomingCall_text(NSString *text);
+void customize_incomingCall_textColor(UIColor *)color;
+void customize_incomingCall_backgroundColor(UIColor *)color;
+void customize_incomingCall_image(UIImage *)image;
+*/
 
 @interface Revtwo : NSObject
 
-- (void)R2customize_incomingCall_text:(NSString *)text;
-- (void)R2customize_incomingCall_textColor:(UIColor *)color;
+ - (void)R2customize_incomingCall_text:(NSString *)text;
+ - (void)R2customize_incomingCall_textColor:(UIColor *)color;
 - (void)R2customize_incomingCall_backgroundColor:(UIColor *)color gradientOn:(BOOL)gradient;
-- (void)R2customize_incomingCall_image:(UIImage *)image;
+ - (void)R2customize_incomingCall_image:(UIImage *)image;
 - (void)R2set_signedInUser:(NSString *)name email:(NSString *)email phone:(NSString *)phone;
 
 @end
