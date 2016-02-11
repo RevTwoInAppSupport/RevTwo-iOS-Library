@@ -8,18 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "R2ActiveCallView.h"
+#import "R2CommunityCall_OptionsView.h"
+#import "R2CommunityCall_ScreenShareView.h"
+@interface R2CommunityCallViewController : UIViewController<R2CommunityCall_OptionsDelegate, R2CommunityCall_ScreenShareDelegate>
 
-@interface R2CommunityCallViewController : UIViewController
 
-@property UILabel * callLabel;
-@property UIButton * screenShareButton;
-@property UIButton * cameraButton;
-@property UIImageView * screenView;
+@property R2CommunityCall_OptionsView * optionsView;
+@property R2CommunityCall_ScreenShareView * screenShareView;
+
 @property R2ActiveCallView * activeCallView;
 
--(void)requestScreenShare;
--(void)requestCamera;
 
 -(void)showScreenShare:(UIImage *)screen;
 -(void)endScreenShare;
+
+//delegate methods
+-(void)dismissView;
+-(void)endCall;
+-(void)setScreenShare;
+-(void)setCamera;
+-(void)setSpeaker:(BOOL)speakerOn;
+-(void)setMute:(BOOL)muteOn;
 @end

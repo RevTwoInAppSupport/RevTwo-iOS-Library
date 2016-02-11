@@ -83,7 +83,7 @@ Pod::Spec.new do |s|
   #  You can preserve files from being cleaned, please don't preserve
   #  non-essential files like tests, examples and documentation.
   #
-  s.resources = "Resources/*.png"
+  s.resources = "Resources/*.{png,jpg,xib}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
