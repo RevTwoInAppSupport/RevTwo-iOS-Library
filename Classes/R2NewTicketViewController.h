@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Revtwo.h"
+#import "R2NewTicket_FormView.h"
 
-@interface R2NewTicketViewController : UIViewController <UIAlertViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate>
+@interface R2NewTicketViewController : UIViewController
+
+//views
+@property R2NewTicket_FormView * formView;
 //community mode
 @property BOOL communityMode;
-//text fields
-@property UITextView *descriptionField;
-@property UIBarButtonItem *submitButton;
-//existing ticket
-@property UILabel *hasTicketLabel;
-@property UIBarButtonItem *closeButton;
 
+-(void)submitNewTicket:(NSString *)description;
+-(void)dismissView;
 @end
