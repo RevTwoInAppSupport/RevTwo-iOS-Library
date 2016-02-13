@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Revtwo.h"
 #import "R2NewTicket_FormView.h"
+#import "R2NewTicket_ExistingView.h"
 
-@interface R2NewTicketViewController : UIViewController
+@interface R2NewTicketViewController : UIViewController<R2NewTicket_FormDelegate, R2NewTicket_ExistingDelegate>
 
 //views
 @property R2NewTicket_FormView * formView;
+@property R2NewTicket_ExistingView * existingView;
 //community mode
 @property BOOL communityMode;
 
