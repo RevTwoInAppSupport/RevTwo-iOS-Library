@@ -31,7 +31,7 @@
                     <rect key="frame" x="159" y="514" width="282" height="59"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkA-r4-Alc">
-                            <rect key="frame" x="0.0" y="4" width="50" height="50"/>
+                            <rect key="frame" x="29" y="5" width="50" height="50"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" image="R2IconScreenShare.png">
@@ -41,19 +41,8 @@
                                 <action selector="manageScreenShare:" destination="iN0-l3-epB" eventType="touchUpInside" id="i7y-u9-9ON"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6c2-8X-NFj">
-                            <rect key="frame" x="58" y="4" width="50" height="50"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="R2IconCamera.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="manageCamera:" destination="iN0-l3-epB" eventType="touchUpInside" id="4qN-Lc-UE8"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDK-Ec-PaZ">
-                            <rect key="frame" x="116" y="4" width="50" height="50"/>
+                            <rect key="frame" x="87" y="5" width="50" height="50"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" image="R2IconMute.png">
@@ -64,7 +53,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yN7-Xo-gQs">
-                            <rect key="frame" x="174" y="4" width="50" height="50"/>
+                            <rect key="frame" x="145" y="5" width="50" height="50"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" image="R2IconSpeaker.png">
@@ -74,10 +63,13 @@
                                 <action selector="manageSpeaker:" destination="iN0-l3-epB" eventType="touchUpInside" id="0LB-le-Wer"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-gS-ONb">
-                            <rect key="frame" x="232" y="4" width="50" height="50"/>
+                        <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-gS-ONb">
+                            <rect key="frame" x="203" y="5" width="50" height="50"/>
                             <color key="backgroundColor" red="0.97254901959999995" green="0.26274509800000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" image="R2IconEndCall.png"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="R2IconEndCall.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
                             <connections>
                                 <action selector="endCall:" destination="iN0-l3-epB" eventType="touchUpInside" id="lxr-OL-xye"/>
                             </connections>
@@ -102,7 +94,7 @@
                 <constraint firstAttribute="trailing" secondItem="3HM-kT-Ich" secondAttribute="trailing" id="zGP-1a-3Ny"/>
             </constraints>
             <connections>
-                <outlet property="cameraButton" destination="6c2-8X-NFj" id="y9q-CZ-EFj"/>
+                <outlet property="buttonWrap" destination="f3x-mB-jfH" id="FGA-B7-eAN"/>
                 <outlet property="closeButton" destination="Lcc-sm-YBw" id="KHP-IT-8FW"/>
                 <outlet property="endCallButton" destination="jLr-gS-ONb" id="LUh-cf-8v9"/>
                 <outlet property="muteButton" destination="IDK-Ec-PaZ" id="t7x-1G-PaN"/>
@@ -114,7 +106,6 @@
         </view>
     </objects>
     <resources>
-        <image name="R2IconCamera.png" width="50" height="50"/>
         <image name="R2IconEndCall.png" width="50" height="50"/>
         <image name="R2IconMute.png" width="50" height="50"/>
         <image name="R2IconScreenShare.png" width="50" height="50"/>

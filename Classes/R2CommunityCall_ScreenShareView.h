@@ -30,6 +30,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *muteButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *speakerButton;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *endCallButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UIView *buttonWrap;
 
 - (IBAction)endCall:(id)sender;
 - (IBAction)closeScreen:(id)sender;

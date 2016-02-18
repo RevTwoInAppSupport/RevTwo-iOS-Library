@@ -27,90 +27,12 @@
                         <action selector="closeScreen:" destination="iN0-l3-epB" eventType="touchUpInside" id="JNh-R4-8BU"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ashley Calder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wep-7K-cJx">
-                    <rect key="frame" x="247" y="27" width="106" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wep-7K-cJx">
+                    <rect key="frame" x="353" y="27" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-M0-6Zz">
-                    <rect key="frame" x="182" y="199" width="236" height="202"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riN-wd-Z80">
-                            <rect key="frame" x="11" y="0.0" width="70" height="70"/>
-                            <color key="backgroundColor" white="1" alpha="0.29929181654676257" colorSpace="calibratedWhite"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="R2IconScreenShare.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="manageScreenShare:" destination="iN0-l3-epB" eventType="touchUpInside" id="uO7-rH-eW3"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMj-eV-WcW">
-                            <rect key="frame" x="156" y="0.0" width="70" height="70"/>
-                            <color key="backgroundColor" white="1" alpha="0.29929181654676257" colorSpace="calibratedWhite"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="R2IconCamera.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="manageCamera:" destination="iN0-l3-epB" eventType="touchUpInside" id="9iN-zP-mo4"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Screen Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVj-nx-ozP">
-                            <rect key="frame" x="8" y="73" width="76" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVM-Le-88D">
-                            <rect key="frame" x="153" y="73" width="76" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speaker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S60-Qn-COy">
-                            <rect key="frame" x="8" y="181" width="76" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcQ-X2-gNj">
-                            <rect key="frame" x="153" y="181" width="76" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="not-Pw-DBa">
-                            <rect key="frame" x="11" y="108" width="70" height="70"/>
-                            <color key="backgroundColor" white="1" alpha="0.29929181654676257" colorSpace="calibratedWhite"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="R2IconSpeaker.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="manageSpeaker:" destination="iN0-l3-epB" eventType="touchUpInside" id="gIy-j9-7TH"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhZ-fm-NU0">
-                            <rect key="frame" x="156" y="108" width="70" height="70"/>
-                            <color key="backgroundColor" white="1" alpha="0.29929181654676257" colorSpace="calibratedWhite"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="R2IconMute.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="manageMute:" destination="iN0-l3-epB" eventType="touchUpInside" id="cPr-dt-KZc"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="236" id="461-cc-TaG"/>
-                        <constraint firstAttribute="height" constant="202" id="Uit-fu-HEp"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ub8-Ug-Myi">
                     <rect key="frame" x="265" y="509" width="70" height="70"/>
                     <color key="backgroundColor" red="0.97254901959999995" green="0.26274509800000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,6 +48,67 @@
                         <action selector="endCall:" destination="iN0-l3-epB" eventType="touchUpInside" id="HTn-HW-lPa"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-M0-6Zz">
+                    <rect key="frame" x="181" y="237" width="251" height="125"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riN-wd-Z80">
+                            <rect key="frame" x="8" y="17" width="70" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="0.29929181654676257" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="R2IconScreenShare.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="manageScreenShare:" destination="iN0-l3-epB" eventType="touchUpInside" id="uO7-rH-eW3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="not-Pw-DBa">
+                            <rect key="frame" x="90" y="17" width="70" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="0.29929181654676257" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="R2IconSpeaker.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="manageSpeaker:" destination="iN0-l3-epB" eventType="touchUpInside" id="gIy-j9-7TH"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Screen Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVj-nx-ozP">
+                            <rect key="frame" x="5" y="88" width="76" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcQ-X2-gNj">
+                            <rect key="frame" x="170" y="88" width="76" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhZ-fm-NU0">
+                            <rect key="frame" x="173" y="17" width="70" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="0.29929181654676257" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="R2IconMute.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="manageMute:" destination="iN0-l3-epB" eventType="touchUpInside" id="cPr-dt-KZc"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speaker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S60-Qn-COy">
+                            <rect key="frame" x="87" y="88" width="73" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="251" id="461-cc-TaG"/>
+                        <constraint firstAttribute="height" constant="125" id="Uit-fu-HEp"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -137,14 +120,13 @@
                 <constraint firstItem="ub8-Ug-Myi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hrg-xx-P3V"/>
                 <constraint firstItem="wep-7K-cJx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="M0R-iX-XMD"/>
                 <constraint firstAttribute="bottom" secondItem="ub8-Ug-Myi" secondAttribute="bottom" constant="21" id="ORy-yt-40v"/>
-                <constraint firstItem="wep-7K-cJx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RMZ-z9-Kmw"/>
+                <constraint firstItem="wep-7K-cJx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="53" id="RMZ-z9-Kmw"/>
                 <constraint firstItem="Iu7-Rr-OPc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Zha-Fp-U1e"/>
                 <constraint firstAttribute="trailing" secondItem="Iu7-Rr-OPc" secondAttribute="trailing" id="rt4-wb-DLp"/>
-                <constraint firstItem="DKB-M0-6Zz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yIy-uT-9IG"/>
+                <constraint firstItem="DKB-M0-6Zz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="6.5" id="yIy-uT-9IG"/>
             </constraints>
             <connections>
                 <outlet property="backgroundImageView" destination="Iu7-Rr-OPc" id="N4e-Og-U0r"/>
-                <outlet property="cameraButton" destination="tMj-eV-WcW" id="D42-fT-hgz"/>
                 <outlet property="closeButton" destination="jdw-YF-avr" id="Nvb-Xd-4Y0"/>
                 <outlet property="endCallButton" destination="ub8-Ug-Myi" id="28v-gD-ExP"/>
                 <outlet property="muteButton" destination="rhZ-fm-NU0" id="C6s-Gu-bP3"/>
@@ -156,7 +138,6 @@
     </objects>
     <resources>
         <image name="R2Background.jpg" width="500" height="333"/>
-        <image name="R2IconCamera.png" width="50" height="50"/>
         <image name="R2IconEndCall.png" width="50" height="50"/>
         <image name="R2IconMute.png" width="50" height="50"/>
         <image name="R2IconScreenShare.png" width="50" height="50"/>
