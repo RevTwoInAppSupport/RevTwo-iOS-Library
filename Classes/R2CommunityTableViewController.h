@@ -13,12 +13,9 @@
 @interface R2CommunityTableViewController : UITableViewController
 
 @property UIBarButtonItem *createTicketButton;
-@property BOOL hasTickets;
 
 @property NSArray *mytickets;
-//@property NSArray *mydates;
 
 @property NSArray *tickets;
-//@property NSArray *dates;
 
 @end
