@@ -10,7 +10,7 @@
 
 
 
-@interface R2CommunityTableViewController : UITableViewController<UIAlertViewDelegate>
+@interface R2CommunityTableViewController : UITableViewController
 
 @property BOOL shownAlert;
 @property UIBarButtonItem *createTicketButton;

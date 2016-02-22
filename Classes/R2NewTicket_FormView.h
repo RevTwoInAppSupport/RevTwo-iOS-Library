@@ -13,7 +13,7 @@
 -(void)submitNewTicket:(NSString *)description;
 @end
 
-@interface R2NewTicket_FormView : UIView<UIAlertViewDelegate, UITextViewDelegate>
+@interface R2NewTicket_FormView : UIView<UITextViewDelegate>
 @property (nonatomic, assign) id  delegate;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *formTitle;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *closeButton;
