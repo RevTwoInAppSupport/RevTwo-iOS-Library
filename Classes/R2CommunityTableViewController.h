@@ -10,8 +10,9 @@
 
 
 
-@interface R2CommunityTableViewController : UITableViewController
+@interface R2CommunityTableViewController : UITableViewController<UIAlertViewDelegate>
 
+@property BOOL shownAlert;
 @property UIBarButtonItem *createTicketButton;
 
 @property NSArray *mytickets;
