@@ -114,7 +114,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="158" id="A2k-sQ-dAi"/>
                     </constraints>
-                    <string key="text">Hit the screen share button to view the screen of the person you are helping.   Screen share is in-app only, so you won't be able to see any other apps or information on their device.</string>
+                    <string key="text">Hit the screen share button to request to view the screen of the person you are helping.   Screen share is in-app only, so you won't be able to see any other apps or information on their device.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
