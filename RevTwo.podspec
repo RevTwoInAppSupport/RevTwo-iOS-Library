@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "RevTwo"
-  s.version      = "2.0"
+  s.version      = "2.0.1"
   s.summary      = "In-App Support for your iOS app."
   s.homepage     = "http://revtwo.com/"
   s.documentation_url = "http://revtwo.com/docs/"
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
 
   # ―――  Todo  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-  # s.social_media_url   = "http://twitter.com/Ashley Calder"
+  s.social_media_url   = "https://twitter.com/therevtwo"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
