@@ -20,11 +20,20 @@ extern int const R2MODE_PRODUCTION;
 
 void R2Initialize(NSString *productKey, NSString *secretKey, int mode);
 
+// NSLog substitutes
+enum {
+    LOGENTRY_TRACE = 1,
+    LOGENTRY_DEBUG = 2,
+    LOGENTRY_WARNING = 3,
+    LOGENTRY_ERROR
+};
 void R2Log(NSString *format, ...);
 void R2Error(NSString *format, ...);
 void R2Warn(NSString *format, ...);
 void R2Debug(NSString *format, ...);
 void R2Trace(NSString *format, ...);
+// Swift print
+void R2Print(NSString *message, NSInteger level);
 
 bool R2IsTicketOpen();
 void R2OpenTicket(NSString *text, NSString *name, NSString *email, NSString *phone, BOOL communityMode);
