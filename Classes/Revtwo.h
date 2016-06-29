@@ -1,6 +1,6 @@
 /*
  Revtwo.h
- Revtwo iOS API version 0.4
+ Revtwo iOS API version 1.0
  
  Copyright (c) 2015 Revtwo.com.
  
@@ -14,13 +14,20 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-extern int const R2MODE_DEVELOPMENT;
-extern int const R2MODE_TESTFLIGHT;
-extern int const R2MODE_PRODUCTION;
+@class R2Ticket;
 
+enum {
+    R2MODE_DEVELOPMENT,
+    R2MODE_TESTFLIGHT,
+    R2MODE_PRODUCTION
+};
+/*
+ * productKey and secretKey come from your Revtwo model
+ * mode is one of the enum values above
+ */
 void R2Initialize(NSString *productKey, NSString *secretKey, int mode);
 
-// NSLog substitutes
+// Onjective-C NSLog substitutes
 enum {
     LOGENTRY_TRACE = 1,
     LOGENTRY_DEBUG = 2,
@@ -32,12 +39,16 @@ void R2Error(NSString *format, ...);
 void R2Warn(NSString *format, ...);
 void R2Debug(NSString *format, ...);
 void R2Trace(NSString *format, ...);
-// Swift print
+// Swift print substitute
 void R2Print(NSString *message, NSInteger level);
 
+/*
+ * Ticket functions
+ */
 bool R2IsTicketOpen();
-void R2OpenTicket(NSString *text, NSString *name, NSString *email, NSString *phone, BOOL communityMode);
-void R2CloseTicket();
+void R2OpenTicket(NSString *text, NSString *name, NSString *email, NSString *phone, NSArray *tags);
+void R2CloseTicket(R2Ticket *ticket);
+
 void R2DeclineCall();
 void R2AcceptCall();
 void R2EndCall();
@@ -47,25 +58,89 @@ void R2SetSpeaker(BOOL useSpeaker);
 BOOL R2isMute();
 void R2Mute(BOOL isMute);
 
+/*
+ * If push notifications are enabled in the app, call this to report the credentials to Revtwo so it can send notifications
+ */
 void R2UpdatePushCredentials(NSData *token);
-void R2ReceivedNotification();
+/*
+ * Let Revtwo handle notifications
+ */
+BOOL R2ReceivedNotification(NSDictionary *dictionary);
+
+NSString * R2getUUID();
 
 NSString * R2get_signedInUserName();
 NSString * R2get_signedInUserEmail();
 NSString * R2get_signedInUserPhone();
-/*
-void customize_incomingCall_text(NSString *text);
-void customize_incomingCall_textColor(UIColor *)color;
-void customize_incomingCall_backgroundColor(UIColor *)color;
-void customize_incomingCall_image(UIImage *)image;
-*/
 
+//**************************************************************
 @interface Revtwo : NSObject
 
- - (void)R2customize_incomingCall_text:(NSString *)text;
- - (void)R2customize_incomingCall_textColor:(UIColor *)color;
-- (void)R2customize_incomingCall_backgroundColor:(UIColor *)color gradientOn:(BOOL)gradient;
- - (void)R2customize_incomingCall_image:(UIImage *)image;
+- (void)R2customize_incomingCall_text:(NSString *)text;
+- (void)R2customize_incomingCall_textColor:(UIColor *)color;
+- (void)R2customize_resolvedPopupTitle_text:(NSString *)text;
+- (void)R2customize_resolvedPopupMessage_text:(NSString *)text;
 - (void)R2set_signedInUser:(NSString *)name email:(NSString *)email phone:(NSString *)phone;
 
 @end
+
+//**************************************************************
+@interface R2Ticket : NSObject
+enum {
+    OPEN = 2,
+    CLOSED = 3
+};
+@property NSNumber *_id;
+@property NSNumber *serverid;
+@property NSString *text;
+@property NSNumber *status;
+//@property NSString *created;
+@property NSNumber *created_ts;       // unix time of this ticket
+@property NSNumber *lastchat;   // unix time of last chat message
+
+
++(R2Ticket *)findById:(NSNumber *)id;
++(R2Ticket *)findByServerId:(NSNumber *)id;
++(NSArray *)findOpen;
++(NSArray *)find:(int)limit after:(int)after;
+
+-(instancetype)initWithDescription:(NSString *)text;
+-(int)save;
+-(bool)isOpen;
+- (NSString *)description;
+
++ (void)setup;
++ (void)clean;
++ (NSArray *)fromJSON:(NSArray *)json;
+
+@end
+
+//**************************************************************
+// Track last view and following status on a ticket
+@interface R2TicketView : NSObject
+
+@property NSNumber *ticket_id;
+@property NSNumber *date;
+@property BOOL following;
+
++(R2TicketView *)findById:(int)id;
++(NSArray *)find:(int)limit;
+
+-(instancetype)initWithId:(NSNumber *)ticket_id date:(NSNumber *)date;
+-(int)save;
+- (NSString *)description;
+
++ (void)setup;
++ (void)delete:(NSNumber *)ticket_id;
++ (void)clean;
+
+@end
+
+
+@protocol R2ViewControllerDelegate <NSObject>
+
+- (void)didDismissR2ViewController;
+
+@end
+
+NSString* R2FormatTimestamp(double timestamp);

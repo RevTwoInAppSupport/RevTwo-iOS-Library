@@ -7,19 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "R2ActiveCallView.h"
+#import "Revtwo.h"
+#import "R2CommunityCall_CallingView.h"
 #import "R2CommunityCall_OptionsView.h"
 #import "R2CommunityCall_ScreenShareView.h"
+
 @interface R2CommunityCallViewController : UIViewController<R2CommunityCall_OptionsDelegate, R2CommunityCall_ScreenShareDelegate>
 
-
+@property R2CommunityCall_CallingView * callingView;
 @property R2CommunityCall_OptionsView * optionsView;
 @property R2CommunityCall_ScreenShareView * screenShareView;
+@property R2Ticket *ticket;
 
-@property R2ActiveCallView * activeCallView;
 
-
--(void)showScreenShare:(UIImage *)screen;
+-(void)showScreenShare:(UIImage *)screen orientation:(NSString *)orientation;
 -(void)endScreenShare;
 
 //delegate methods

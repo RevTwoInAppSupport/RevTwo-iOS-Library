@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="R2IncomingCallViewController">
+            <connections>
+                <outlet property="acceptButton" destination="WXk-uI-pvE" id="2Hg-in-u9k"/>
+                <outlet property="declineButton" destination="kSg-wd-Aef" id="3fU-Nh-XYv"/>
+                <outlet property="incomingCallLabel" destination="2X8-SV-KKc" id="p1v-iJ-ZwA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="R2Background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FCI-zP-ZFG">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incoming Call from Support" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2X8-SV-KKc">
+                    <rect key="frame" x="23" y="46" width="555" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="yHr-77-Ney"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imM-vd-XUx">
+                    <rect key="frame" x="180" y="438" width="240" height="128"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSg-wd-Aef">
+                            <rect key="frame" x="8" y="29" width="70" height="70"/>
+                            <color key="backgroundColor" red="0.97254901959999995" green="0.26274509800000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="R2IconEndCall.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="declineCall:" destination="-1" eventType="touchUpInside" id="vh8-hx-tMM"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXk-uI-pvE">
+                            <rect key="frame" x="162" y="29" width="70" height="70"/>
+                            <color key="backgroundColor" red="0.16078431369999999" green="0.76078431369999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="R2IconStartCall.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="acceptCall:" destination="-1" eventType="touchUpInside" id="r7v-hT-SRI"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Decline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ev9-fW-w2x">
+                            <rect key="frame" x="15" y="99" width="57" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-mq-JOv">
+                            <rect key="frame" x="170" y="99" width="54" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="HEM-9q-aqi"/>
+                        <constraint firstAttribute="height" constant="128" id="TBP-T9-mxW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="imM-vd-XUx" secondAttribute="bottom" constant="34" id="3rT-o8-B03"/>
+                <constraint firstAttribute="bottom" secondItem="FCI-zP-ZFG" secondAttribute="bottom" id="5nf-yY-wus"/>
+                <constraint firstItem="imM-vd-XUx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ceh-My-kHm"/>
+                <constraint firstItem="2X8-SV-KKc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="46" id="NNL-QU-oh8"/>
+                <constraint firstItem="FCI-zP-ZFG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SiV-7d-aMM"/>
+                <constraint firstAttribute="trailing" secondItem="FCI-zP-ZFG" secondAttribute="trailing" id="WXw-Mg-ZeX"/>
+                <constraint firstItem="2X8-SV-KKc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="23" id="ZTu-pQ-dgJ"/>
+                <constraint firstItem="FCI-zP-ZFG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="poT-fg-1XB"/>
+                <constraint firstAttribute="trailing" secondItem="2X8-SV-KKc" secondAttribute="trailing" constant="22" id="x2E-1r-6k6"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="R2Background.jpg" width="500" height="333"/>
+        <image name="R2IconEndCall.png" width="50" height="50"/>
+        <image name="R2IconStartCall.png" width="50" height="50"/>
+    </resources>
+</document>

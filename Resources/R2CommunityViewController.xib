@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="R2CommunityViewController">
+            <connections>
+                <outlet property="loadingIndicator" destination="0QF-JU-vMO" id="5HP-AM-hXL"/>
+                <outlet property="ticketTableView" destination="F3n-bu-0LP" id="DbC-Yy-Uwv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="F3n-bu-0LP">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="u7b-PK-cNy"/>
+                        <outlet property="delegate" destination="-1" id="Uki-T2-J8f"/>
+                    </connections>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0QF-JU-vMO">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="F3n-bu-0LP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3dC-4E-TI9"/>
+                <constraint firstItem="F3n-bu-0LP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="42l-J2-Jli"/>
+                <constraint firstAttribute="trailing" secondItem="F3n-bu-0LP" secondAttribute="trailing" id="9rV-Jf-irp"/>
+                <constraint firstItem="0QF-JU-vMO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Sbu-8G-UiM"/>
+                <constraint firstItem="0QF-JU-vMO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZYQ-TI-wXN"/>
+                <constraint firstAttribute="bottom" secondItem="F3n-bu-0LP" secondAttribute="bottom" id="cR6-yB-6k8"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

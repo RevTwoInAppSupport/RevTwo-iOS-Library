@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "RevTwo"
-  s.version      = "2.1.1"
+  s.version      = "2.2"
   s.summary      = "In-App Support for your iOS app."
   s.homepage     = "http://revtwo.com/"
   s.documentation_url = "http://revtwo.com/docs/"
@@ -101,6 +101,6 @@ Pod::Spec.new do |s|
   s.dependency "PubNub", "~> 4.0"
   s.dependency "libjingle_peerconnection"
   s.dependency "JSQMessagesViewController"
-  s.dependency "Firebase", ">= 2.5.1"
+  s.dependency "Firebase", "= 2.5.1"
 
 end
