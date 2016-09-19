@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "RevTwo"
-  s.version      = "2.2.0"
+  s.version      = "2.2.2"
   s.summary      = "In-App Support for your iOS app."
   s.homepage     = "http://revtwo.com/"
   s.documentation_url = "http://revtwo.com/docs/"
@@ -98,7 +98,7 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   
-  s.dependency "PubNub", "~> 4.0"
+  s.dependency "PubNub", "<= 4.4.1"
   s.dependency "libjingle_peerconnection"
   s.dependency "JSQMessagesViewController"
   s.dependency "Firebase", "= 2.5.1"
