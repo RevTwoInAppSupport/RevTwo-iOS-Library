@@ -30,35 +30,4 @@
 @property NSString * ticketTable_NoClosedTicketsText;
 @property NSString * ticketTable_NoTicketsText;
 
-/*
- * Properties
- */
-@property NSArray * openTickets;
-@property NSArray * closedTickets;
-@property BOOL formIsVisible;
-@property NSString *chatToken;
-@property BOOL viewIsLoading;
-@property (weak, nonatomic) id<R2ViewControllerDelegate> delegateModal;
-/*
- * ui
- */
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *NoTicketsLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
-//constraints
-@property (unsafe_unretained, nonatomic) IBOutlet NSLayoutConstraint *ticketFormTopConstraint;
-@property (unsafe_unretained, nonatomic) IBOutlet NSLayoutConstraint *ticketTabelViewTopConstraint;
-//ticket form view
-@property (unsafe_unretained, nonatomic) IBOutlet UIView *ticketFormView;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *instructionLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *submitButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UITextView *ticketTextField;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *askQuestionButton;
-
-//ticket table
-@property (unsafe_unretained, nonatomic) IBOutlet UITableView *ticketTabelView;
-
-- (IBAction)submitNewTicket:(id)sender;
-- (IBAction)openTicketForm:(id)sender;
--(void)slideDownTicketFormView;
--(void)slideUpTicketFormView;
 @end

@@ -1,6 +1,6 @@
 /*
  Revtwo.h
- Revtwo iOS API version 1.0
+ Revtwo iOS API version 2.2
  
  Copyright (c) 2015 Revtwo.com.
  
@@ -16,19 +16,33 @@
 
 @class R2Ticket;
 
-enum {
+enum R2MODE {
     R2MODE_DEVELOPMENT,
     R2MODE_TESTFLIGHT,
     R2MODE_PRODUCTION
 };
+
+//**************************************************************
+@interface Revtwo : NSObject
++(void)start:(NSString *)productKey secretKey:(NSString *)secretKey mode:(int)mode enableCalls:(bool)enableCalls;
++(bool)callingEnabled;
++(void)Print:(NSString *)message level:(int)level;
++(bool)isTicketOpen;
++(void)openTicket:(NSString *)text name:(NSString *)name tags:(NSArray *)tags data:(NSDictionary *)data;
++(void)openTicketLocation:(NSString *)text name:(NSString *)name tags:(NSArray *)tags lat:(double)lat lng:(double)lng data:(NSDictionary *)data;
++(void)closeTicket:(R2Ticket *)ticket;
++(void)updatePushToken:(NSData *)token;
++(BOOL)handleNotification:(NSDictionary *)dictionary;
+@end
+
 /*
  * productKey and secretKey come from your Revtwo model
  * mode is one of the enum values above
  */
-void R2Initialize(NSString *productKey, NSString *secretKey, int mode);
+void R2Initialize(NSString *productKey, NSString *secretKey, int mode, bool enableCalls);
 
 // Onjective-C NSLog substitutes
-enum {
+enum LOGENTRY {
     LOGENTRY_TRACE = 1,
     LOGENTRY_DEBUG = 2,
     LOGENTRY_WARNING = 3,
@@ -46,7 +60,8 @@ void R2Print(NSString *message, NSInteger level);
  * Ticket functions
  */
 bool R2IsTicketOpen();
-void R2OpenTicket(NSString *text, NSString *name, NSString *email, NSString *phone, NSArray *tags);
+void R2OpenTicket(NSString *text, NSString *name, NSArray *tags, NSDictionary *data);
+void R2OpenTicketLocation(NSString *text, NSString *name, NSArray *tags, double lat, double lng, NSDictionary *data);
 void R2CloseTicket(R2Ticket *ticket);
 
 void R2DeclineCall();
@@ -69,34 +84,36 @@ BOOL R2ReceivedNotification(NSDictionary *dictionary);
 
 NSString * R2getUUID();
 
-NSString * R2get_signedInUserName();
-NSString * R2get_signedInUserEmail();
-NSString * R2get_signedInUserPhone();
-
 //**************************************************************
-@interface Revtwo : NSObject
+@interface R2Customize : NSObject
 
-- (void)R2customize_incomingCall_text:(NSString *)text;
-- (void)R2customize_incomingCall_textColor:(UIColor *)color;
-- (void)R2customize_resolvedPopupTitle_text:(NSString *)text;
-- (void)R2customize_resolvedPopupMessage_text:(NSString *)text;
-- (void)R2set_signedInUser:(NSString *)name email:(NSString *)email phone:(NSString *)phone;
-
++ (void)setIncomingCallText:(NSString *)text;
++ (void)setIncomingCallTextColor:(UIColor *)color;
++ (void)setResolvedPopupTitleText:(NSString *)text;
++ (void)setResolvedPopupMessageText:(NSString *)text;
++ (void)setUser:(NSString *)name email:(NSString *)email;
++ (NSString *)getUserName;
 @end
 
 //**************************************************************
 @interface R2Ticket : NSObject
 enum {
-    OPEN = 2,
-    CLOSED = 3
+    TICKET_OPEN = 2,
+    TICKET_CLOSED = 3
 };
-@property NSNumber *_id;
-@property NSNumber *serverid;
-@property NSString *text;
-@property NSNumber *status;
-//@property NSString *created;
-@property NSNumber *created_ts;       // unix time of this ticket
+@property NSNumber *_id;        // a local id only
+@property NSNumber *serverid;   // the official id of a ticket
+@property NSString *text;       // the question
+@property NSString *username;   // the user who asked [optional]
+@property NSNumber *status;     // OPEN or CLOSED
+@property NSNumber *created_ts; // unix time of this ticket
 @property NSNumber *lastchat;   // unix time of last chat message
+@property NSString *tags;       // string of comma delimited tags
+@property NSNumber *lat;        // location of the ticket [optional]
+@property NSNumber *lng;        // location of the ticket [optional]
+@property NSNumber *myticket;   // flag if this is my ticket (1=mine)
+@property NSDictionary *data;   // metadata collected with this ticket, depends on your app [optional]
+@property NSString *uid;        // the ticket creator (app uuid) just like in chats
 
 
 +(R2Ticket *)findById:(NSNumber *)id;
@@ -104,9 +121,15 @@ enum {
 +(NSArray *)findOpen;
 +(NSArray *)find:(int)limit after:(int)after;
 
++(BOOL)getMyTickets:(bool)includeClosed following:(bool)following completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
++(BOOL)getCommunityTickets:(NSArray *)tags lat:(NSNumber *)lat lng:(NSNumber *)lng range:(NSNumber *)range completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
+-(BOOL)flagContent:(NSString *)chatId completionHandler:(void(^)(NSString *error))completionHandler;
+
 -(instancetype)initWithDescription:(NSString *)text;
 -(int)save;
 -(bool)isOpen;
+-(bool)isFollowing;
+-(int)getLastView;
 - (NSString *)description;
 
 + (void)setup;
@@ -114,28 +137,6 @@ enum {
 + (NSArray *)fromJSON:(NSArray *)json;
 
 @end
-
-//**************************************************************
-// Track last view and following status on a ticket
-@interface R2TicketView : NSObject
-
-@property NSNumber *ticket_id;
-@property NSNumber *date;
-@property BOOL following;
-
-+(R2TicketView *)findById:(int)id;
-+(NSArray *)find:(int)limit;
-
--(instancetype)initWithId:(NSNumber *)ticket_id date:(NSNumber *)date;
--(int)save;
-- (NSString *)description;
-
-+ (void)setup;
-+ (void)delete:(NSNumber *)ticket_id;
-+ (void)clean;
-
-@end
-
 
 @protocol R2ViewControllerDelegate <NSObject>
 
