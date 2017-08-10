@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RevTwo.h"
+#import "Revtwo.h"
 
 @interface R2CommunityViewController : UIViewController
 

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="NO">
+    <dependencies>
+        <deployment version="2048" identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="R2KnowledgeBaseViewController">
+            <connections>
+                <outlet property="acceptButton" destination="CF6-W6-oLE" id="Jgd-id-IRS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="rTN-0h-E4R" id="6uX-H0-QlR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CF6-W6-oLE">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <color key="backgroundColor" red="0.16020780801773071" green="0.78699547052383423" blue="0.25398004055023193" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="vfe-f1-fgh"/>
+                    </constraints>
+                    <state key="normal" title="This answers my question">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="acceptAnswer:" destination="-1" eventType="touchUpInside" id="nFi-ec-sKj"/>
+                    </connections>
+                </button>
+                <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rTN-0h-E4R">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="624"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="JNC-kY-ddO"/>
+                    </connections>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="rTN-0h-E4R" secondAttribute="bottom" constant="43" id="CI0-3w-bth"/>
+                <constraint firstAttribute="bottom" secondItem="CF6-W6-oLE" secondAttribute="bottom" id="S6V-i1-kJU"/>
+                <constraint firstItem="rTN-0h-E4R" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZzA-h6-EQE"/>
+                <constraint firstItem="CF6-W6-oLE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gEF-f8-f6j"/>
+                <constraint firstAttribute="trailing" secondItem="rTN-0h-E4R" secondAttribute="trailing" id="mJG-Kd-sO1"/>
+                <constraint firstAttribute="trailing" secondItem="CF6-W6-oLE" secondAttribute="trailing" id="sql-R5-JOk"/>
+                <constraint firstItem="rTN-0h-E4R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wQD-W5-j7Z"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

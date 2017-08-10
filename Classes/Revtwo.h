@@ -28,11 +28,12 @@ enum R2MODE {
 +(bool)callingEnabled;
 +(void)Print:(NSString *)message level:(int)level;
 +(bool)isTicketOpen;
-+(void)openTicket:(NSString *)text name:(NSString *)name tags:(NSArray *)tags data:(NSDictionary *)data;
-+(void)openTicketLocation:(NSString *)text name:(NSString *)name tags:(NSArray *)tags lat:(double)lat lng:(double)lng data:(NSDictionary *)data;
++(void)openTicket:(NSString *)text tags:(NSArray *)tags data:(NSDictionary *)data completionHandler:(void(^)(R2Ticket *ticket, NSString *chatToken))completionHandler;
++(void)openTicketLocation:(NSString *)text tags:(NSArray *)tags lat:(double)lat lng:(double)lng data:(NSDictionary *)data completionHandler:(void(^)(R2Ticket *ticket, NSString *chatToken))completionHandler;
 +(void)closeTicket:(R2Ticket *)ticket;
 +(void)updatePushToken:(NSData *)token;
 +(BOOL)handleNotification:(NSDictionary *)dictionary;
++(NSString *)avatarBase;
 @end
 
 /*
@@ -60,8 +61,8 @@ void R2Print(NSString *message, NSInteger level);
  * Ticket functions
  */
 bool R2IsTicketOpen();
-void R2OpenTicket(NSString *text, NSString *name, NSArray *tags, NSDictionary *data);
-void R2OpenTicketLocation(NSString *text, NSString *name, NSArray *tags, double lat, double lng, NSDictionary *data);
+//void R2OpenTicket(NSString *text, NSString *name, NSArray *tags, NSDictionary *data);
+//void R2OpenTicketLocation(NSString *text, NSString *name, NSArray *tags, double lat, double lng, NSDictionary *data);
 void R2CloseTicket(R2Ticket *ticket);
 
 void R2DeclineCall();
@@ -93,6 +94,7 @@ NSString * R2getUUID();
 + (void)setResolvedPopupMessageText:(NSString *)text;
 + (void)setUser:(NSString *)name email:(NSString *)email;
 + (NSString *)getUserName;
++ (NSString *)getUserEmail;
 @end
 
 //**************************************************************
@@ -105,15 +107,22 @@ enum {
 @property NSNumber *serverid;   // the official id of a ticket
 @property NSString *text;       // the question
 @property NSString *username;   // the user who asked [optional]
+@property NSString *email;      // the user's email [optional]
 @property NSNumber *status;     // OPEN or CLOSED
 @property NSNumber *created_ts; // unix time of this ticket
+@property NSNumber *duration_ts;  // seconds this ticket was open [optional]
 @property NSNumber *lastchat;   // unix time of last chat message
-@property NSString *tags;       // string of comma delimited tags
+@property NSString *tags;       // string of comma delimited tags [optional]
 @property NSNumber *lat;        // location of the ticket [optional]
 @property NSNumber *lng;        // location of the ticket [optional]
 @property NSNumber *myticket;   // flag if this is my ticket (1=mine)
 @property NSDictionary *data;   // metadata collected with this ticket, depends on your app [optional]
 @property NSString *uid;        // the ticket creator (app uuid) just like in chats
+// If ticket is assigned to a helpdesk user
+@property NSString *assignedFirstName;
+@property NSString *assignedLastName;
+@property NSString *assignedAvatar;
+@property NSNumber *rating; 
 
 
 +(R2Ticket *)findById:(NSNumber *)id;
@@ -122,6 +131,7 @@ enum {
 +(NSArray *)find:(int)limit after:(int)after;
 
 +(BOOL)getMyTickets:(bool)includeClosed following:(bool)following completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
++(BOOL)getUserTickets:(NSString *)email includeClosed:(bool)includeClosed completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
 +(BOOL)getCommunityTickets:(NSArray *)tags lat:(NSNumber *)lat lng:(NSNumber *)lng range:(NSNumber *)range completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
 -(BOOL)flagContent:(NSString *)chatId completionHandler:(void(^)(NSString *error))completionHandler;
 

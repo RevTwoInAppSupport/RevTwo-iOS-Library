@@ -15,6 +15,7 @@
  * Customizations
  */
 @property NSArray *tags;    // tags to apply to created ticket(s)
+@property NSDictionary *data;   //meta data to apply to created ticket(s)
 //ticket form
 @property NSString * ticketForm_InstructionText;
 @property NSString * ticketForm_SubmitText;
@@ -30,4 +31,5 @@
 @property NSString * ticketTable_NoClosedTicketsText;
 @property NSString * ticketTable_NoTicketsText;
 
+@property (weak, nonatomic) id<R2ViewControllerDelegate> delegateModal;
 @end

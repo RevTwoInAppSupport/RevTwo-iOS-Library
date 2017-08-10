@@ -11,26 +11,27 @@
 
 @interface R2ChatViewController : JSQMessagesViewController
 
+enum VIEWSTYLE {
+    VIEWSTYLE_MULTICOLOR = 1,
+    VIEWSTYLE_AVATAR = 2
+};
+
 //properties
 @property R2Ticket *ticket;
 
 //Customize
+@property NSInteger viewStyle;
 @property BOOL enableClose;
 @property BOOL enableCall;
 @property BOOL enableFollow;
 @property BOOL enableReporting;
 @property NSString * closeButtonText;
-
-/*
- * CUSTOM BANNER VIEW
- * 100 px tall, full width.  Displayed under the nav bar
- */
-@property UIView * customBannerView;
+@property BOOL enableTicketTextInChat; //shows the ticket text as the first message in chat
+@property UIColor * outgoingMessageColor; //defaults to blue
+@property UIColor * incomingMessageColor; //defaults to gray
 
 //chat
 @property NSString *chatToken;
-@property NSString *username;
-- (void)connect:(NSString *)authToken ticketid:(int)ticketid;
 
 //modal
 @property (weak, nonatomic) id<R2ViewControllerDelegate> delegateModal;

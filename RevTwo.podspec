@@ -101,6 +101,11 @@ Pod::Spec.new do |s|
   s.dependency "PubNub", "<= 4.4.1"
   s.dependency "libjingle_peerconnection"
   s.dependency "JSQMessagesViewController"
-  s.dependency "Firebase", "= 2.5.1"
+  #s.dependency "Firebase", "= 2.5.1"
+
+  s.dependency "Firebase/Core"
+  s.dependency "Firebase/Auth"
+  s.dependency "Firebase/Database"
+
 
 end
