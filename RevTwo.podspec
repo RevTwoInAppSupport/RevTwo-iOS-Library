@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "RevTwo"
-  s.version      = "2.5.1"
+  s.version      = "3.0"
   s.summary      = "In-App Support for your iOS app."
   s.homepage     = "http://revtwo.com/"
   s.documentation_url = "http://revtwo.com/docs/"
