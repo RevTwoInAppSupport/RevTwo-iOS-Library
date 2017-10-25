@@ -15,8 +15,11 @@
 @property NSString * answerid;
 @property NSString * responseid;
 @property R2Ticket *ticket;
+@property BOOL * enableFeedbackBar;
+
 @property (unsafe_unretained, nonatomic) IBOutlet WKWebView *webView;
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *acceptButton;
 - (IBAction)acceptAnswer:(id)sender;
+@property (unsafe_unretained, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 @end

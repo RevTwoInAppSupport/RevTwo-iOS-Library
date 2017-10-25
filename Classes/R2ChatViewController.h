@@ -25,10 +25,16 @@ enum VIEWSTYLE {
 @property BOOL enableCall;
 @property BOOL enableFollow;
 @property BOOL enableReporting;
+@property BOOL shortenNames;
 @property NSString * closeButtonText;
 @property BOOL enableTicketTextInChat; //shows the ticket text as the first message in chat
 @property UIColor * outgoingMessageColor; //defaults to blue
 @property UIColor * incomingMessageColor; //defaults to gray
+
+//Feedback Bar
+@property UIView * feedbackBarView;
+@property NSString *feedbackUpText;
+@property NSString *feedbackDownText;
 
 //chat
 @property NSString *chatToken;

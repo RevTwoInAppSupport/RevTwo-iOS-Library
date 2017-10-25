@@ -30,10 +30,14 @@ enum R2MODE {
 +(bool)isTicketOpen;
 +(void)openTicket:(NSString *)text tags:(NSArray *)tags data:(NSDictionary *)data completionHandler:(void(^)(R2Ticket *ticket, NSString *chatToken))completionHandler;
 +(void)openTicketLocation:(NSString *)text tags:(NSArray *)tags lat:(double)lat lng:(double)lng data:(NSDictionary *)data completionHandler:(void(^)(R2Ticket *ticket, NSString *chatToken))completionHandler;
-+(void)closeTicket:(R2Ticket *)ticket;
+// +(void)closeTicket:(R2Ticket *)ticket;
 +(void)updatePushToken:(NSData *)token;
 +(BOOL)handleNotification:(NSDictionary *)dictionary;
 +(NSString *)avatarBase;
+
+// enable testing
++ (void)setDomain:(NSString *)domain;
++ (void)setLogLevel:(int)level;
 @end
 
 /*
@@ -58,23 +62,6 @@ void R2Trace(NSString *format, ...);
 void R2Print(NSString *message, NSInteger level);
 
 /*
- * Ticket functions
- */
-bool R2IsTicketOpen();
-//void R2OpenTicket(NSString *text, NSString *name, NSArray *tags, NSDictionary *data);
-//void R2OpenTicketLocation(NSString *text, NSString *name, NSArray *tags, double lat, double lng, NSDictionary *data);
-void R2CloseTicket(R2Ticket *ticket);
-
-void R2DeclineCall();
-void R2AcceptCall();
-void R2EndCall();
-
-BOOL R2isUsingSpeaker();
-void R2SetSpeaker(BOOL useSpeaker);
-BOOL R2isMute();
-void R2Mute(BOOL isMute);
-
-/*
  * If push notifications are enabled in the app, call this to report the credentials to Revtwo so it can send notifications
  */
 void R2UpdatePushCredentials(NSData *token);
@@ -95,6 +82,10 @@ NSString * R2getUUID();
 + (void)setUser:(NSString *)name email:(NSString *)email;
 + (NSString *)getUserName;
 + (NSString *)getUserEmail;
++ (void)setLanguage:(NSString *)language;   // ISO 639-1 compliant 2 letter code to override the phone default
++ (void)enableCalls:(BOOL)calls voice:(BOOL)voice screen:(BOOL)screen;
++ (void)enableCallTicketPrompt:(BOOL)prompt;
++ (void)enableRating:(BOOL)enabled;
 @end
 
 //**************************************************************
@@ -122,7 +113,7 @@ enum {
 @property NSString *assignedFirstName;
 @property NSString *assignedLastName;
 @property NSString *assignedAvatar;
-@property NSNumber *rating; 
+@property NSNumber *rating;
 
 
 +(R2Ticket *)findById:(NSNumber *)id;
@@ -130,17 +121,23 @@ enum {
 +(NSArray *)findOpen;
 +(NSArray *)find:(int)limit after:(int)after;
 
++(void)getTicket:(NSNumber *)ticketid completionHandler:(void(^)(R2Ticket *ticket, NSString *chatToken))completionHandler;
 +(BOOL)getMyTickets:(bool)includeClosed following:(bool)following completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
 +(BOOL)getUserTickets:(NSString *)email includeClosed:(bool)includeClosed completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
++(void)getUnreadUserTickets:(NSString *)email completionHandler:(void(^)(NSNumber *unread))completionHandler;
 +(BOOL)getCommunityTickets:(NSArray *)tags lat:(NSNumber *)lat lng:(NSNumber *)lng range:(NSNumber *)range completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
 -(BOOL)flagContent:(NSString *)chatId completionHandler:(void(^)(NSString *error))completionHandler;
 
 -(instancetype)initWithDescription:(NSString *)text;
+-(instancetype)initFromJSON:(NSDictionary *)data;
 -(int)save;
+-(void)close;
 -(bool)isOpen;
 -(bool)isFollowing;
+-(bool)hasUnread;
+-(void)setViewed;
 -(int)getLastView;
-- (NSString *)description;
+-(NSString *)description;
 
 + (void)setup;
 + (void)clean;
