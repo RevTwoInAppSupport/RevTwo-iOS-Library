@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RevTwo.h"
+#import "Revtwo.h"
 
 @interface R2MyTicketViewController : UIViewController <UIScrollViewDelegate>
-
+- (id)init;
 /*
  * Customizations
  */
@@ -30,6 +30,16 @@
 @property NSString * ticketTable_NoOpenTicketsText;
 @property NSString * ticketTable_NoClosedTicketsText;
 @property NSString * ticketTable_NoTicketsText;
+
+//chat page
+@property NSInteger viewStyle;  // enum in R2ChatViewController.h
+@property BOOL enableClose;
+@property BOOL enableReporting;
+@property BOOL shortenNames;
+@property NSString * closeButtonText;
+@property BOOL enableTicketTextInChat; //shows the ticket text as the first message in chat
+@property UIColor * outgoingMessageColor; //defaults to blue
+@property UIColor * incomingMessageColor; //defaults to gray
 
 @property (weak, nonatomic) id<R2ViewControllerDelegate> delegateModal;
 @end

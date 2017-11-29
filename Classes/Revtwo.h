@@ -126,6 +126,11 @@ enum {
 +(BOOL)getUserTickets:(NSString *)email includeClosed:(bool)includeClosed completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
 +(void)getUnreadUserTickets:(NSString *)email completionHandler:(void(^)(NSNumber *unread))completionHandler;
 +(BOOL)getCommunityTickets:(NSArray *)tags lat:(NSNumber *)lat lng:(NSNumber *)lng range:(NSNumber *)range completionHandler:(void(^)(NSArray *tickets, NSString *chatToken))completionHandler;
++(void)sendChat:(int)ticketid message:(NSString *)text;
++(void)sendPicture:(int)ticketid picture:(UIImage *)image;
++(void)sendFile:(int)ticketid data:(NSData *)data name:(NSString *)name;
+
+
 -(BOOL)flagContent:(NSString *)chatId completionHandler:(void(^)(NSString *error))completionHandler;
 
 -(instancetype)initWithDescription:(NSString *)text;

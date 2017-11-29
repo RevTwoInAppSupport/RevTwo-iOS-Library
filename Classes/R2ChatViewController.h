@@ -20,7 +20,7 @@ enum VIEWSTYLE {
 @property R2Ticket *ticket;
 
 //Customize
-@property NSInteger viewStyle;
+@property NSInteger viewStyle;      // enum in R2ChatViewController.h
 @property BOOL enableClose;
 @property BOOL enableCall;
 @property BOOL enableFollow;
