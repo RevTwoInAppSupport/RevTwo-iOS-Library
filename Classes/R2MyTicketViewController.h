@@ -14,6 +14,7 @@
 /*
  * Customizations
  */
+@property NSString *productkey; // product to use for new tickets
 @property NSArray *tags;    // tags to apply to created ticket(s)
 @property NSDictionary *data;   //meta data to apply to created ticket(s)
 //ticket form

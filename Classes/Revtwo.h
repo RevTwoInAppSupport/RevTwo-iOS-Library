@@ -28,8 +28,8 @@ enum R2MODE {
 +(bool)callingEnabled;
 +(void)Print:(NSString *)message level:(int)level;
 +(bool)isTicketOpen;
-+(void)openTicket:(NSString *)text tags:(NSArray *)tags data:(NSDictionary *)data completionHandler:(void(^)(R2Ticket *ticket, NSString *chatToken))completionHandler;
-+(void)openTicketLocation:(NSString *)text tags:(NSArray *)tags lat:(double)lat lng:(double)lng data:(NSDictionary *)data completionHandler:(void(^)(R2Ticket *ticket, NSString *chatToken))completionHandler;
++(void)openTicket:(NSString *)text tags:(NSArray *)tags data:(NSDictionary *)data productkey:(NSString *)productkey completionHandler:(void(^)(R2Ticket *ticket, NSString *chatToken))completionHandler;
++(void)openTicketLocation:(NSString *)text tags:(NSArray *)tags lat:(double)lat lng:(double)lng data:(NSDictionary *)data productkey:(NSString *)productkey completionHandler:(void(^)(R2Ticket *ticket, NSString *chatToken))completionHandler;
 // +(void)closeTicket:(R2Ticket *)ticket;
 +(void)updatePushToken:(NSData *)token;
 +(BOOL)handleNotification:(NSDictionary *)dictionary;
@@ -38,6 +38,8 @@ enum R2MODE {
 // enable testing
 + (void)setDomain:(NSString *)domain;
 + (void)setLogLevel:(int)level;
+
++(BOOL)isNetworkAvailable;
 @end
 
 /*
@@ -107,7 +109,8 @@ enum {
 @property NSNumber *lat;        // location of the ticket [optional]
 @property NSNumber *lng;        // location of the ticket [optional]
 @property NSNumber *myticket;   // flag if this is my ticket (1=mine)
-@property NSDictionary *data;   // metadata collected with this ticket, depends on your app [optional]
+//@property NSDictionary *data;   // metadata collected with this ticket, depends on your app [optional]
+@property NSNumber *productid;    // the ticket product type
 @property NSString *uid;        // the ticket creator (app uuid) just like in chats
 // If ticket is assigned to a helpdesk user
 @property NSString *assignedFirstName;

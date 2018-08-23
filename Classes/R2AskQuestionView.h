@@ -15,6 +15,7 @@
 @end
 
 @interface R2AskQuestionView : UIView
+@property NSString *productkey;
 @property (nonatomic, assign) id  delegate;
 @property (unsafe_unretained, nonatomic) IBOutlet UIView *iconCircleView;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextView *questionTextView;

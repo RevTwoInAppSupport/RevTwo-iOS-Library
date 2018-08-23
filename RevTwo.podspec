@@ -10,10 +10,10 @@ Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   s.name         = "RevTwo"
-  s.version      = "3.0.2"
+  s.version      = "3.0.3"
   s.summary      = "In-App Support for your iOS app."
   s.homepage     = "http://revtwo.com/"
-  s.documentation_url = "http://revtwo.com/docs/"
+  s.documentation_url = "https://revtwo.readme.io/"
   s.author             = { "RevTwo Team" => "info@revtwo.com" }
 
   
